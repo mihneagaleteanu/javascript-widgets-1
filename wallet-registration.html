@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  </head>
-  <body>
-    <form action="/" method="GET">
-      <input type="hidden" name="scope" value="<<scope>>"/>
-      <input type="hidden" name="redirect" value="<<redirect>>"/>
-      
-       <table width=100%>
-         <tr>
-           <td colspan="2" width="300px"><img src="https://www.points.com/static/img/logos/en/alaska.png" alt="Alaska Airlines Mileage Plan™ Logo" /></td>
-         </tr>
-   <tr>
-   <td>Mileage Plan #:</td>
-   <td><input type="text" name="number" value=""/></td>
-   </tr>
-   <tr>
-   <td>First Name:</td>
-   <td><input type="text" name="first" value=""/></td>
-   </tr>
-   <tr>
-   <td>Last Name:</td>
-   <td><input type="text" name="last" value=""/></td>
-   </tr>
-   <tr>
-   <td>Email Address:</td>
-   <td><input type="text" name="email" /></td>
-   </tr>
-   <tr>
-   <td><input type="submit" value="Login"/></td>
-   </tr>
-   </table> 
-    </form>
-  </body>
+<head>
+<title>FormGet Responsive Form</title>
+<!-----Including CSS for different screen sizes----->
+<link rel="stylesheet" type="text/css" href="responsiveform.css">
+<link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 601px)" href="responsiveform1.css" />
+<link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" href="responsiveform2.css" />
+<link rel="stylesheet" media="screen and (max-width: 350px)" href="responsiveform3.css" />
+</head>
+<body>
+<div id="envelope">
+<form action="/" method="GET">
+<input type="hidden" name="scope" value="<<scope>>"/>
+<input type="hidden" name="redirect" value="<<redirect>>"/>
+<header>
+<h2>Mileage Plan Login</h2>
+</header>
+<label>Mileage Plan Number</label>
+<input name="number" type="text" width="100px;">
+<label>Email</label>
+<input name="email" type="text">
+<label>First Name</label>
+<input name="first" type="text">
+<label>Last Name</label>
+<input name="first" type="text">
+<input id="submit" type="submit" value="Login">
+</form>
+</div>
+</body>
 </html>
