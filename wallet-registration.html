@@ -3,29 +3,34 @@
   <head>
   </head>
   <body>
+    <form action="/" method="GET">
+      <input type="hidden" name="scope" value="<<scope>>"/>
+      <input type="hidden" name="redirect" value="<<redirect>>"/>
+      
        <table>
          <tr>
            <td><img src="https://www.points.com/static/img/logos/en/alaska.png" alt="Alaska Airlines Mileage Plan™ Logo" /></td>
          </tr>
    <tr>
    <td>Mileage Plan #:</td>
-   <td><input type="text" id="number" value=""/></td>
+   <td><input type="text" name="number" value=""/></td>
    </tr>
    <tr>
    <td>First Name:</td>
-   <td><input type="text" id="first" value=""/></td>
+   <td><input type="text" name="first" value=""/></td>
    </tr>
    <tr>
    <td>Last Name:</td>
-   <td><input type="text" id="last" value=""/></td>
+   <td><input type="text" name="last" value=""/></td>
    </tr>
    <tr>
    <td>Email Address:</td>
-   <td><input type="text" id="email" /></td>
+   <td><input type="text" name="email" /></td>
    </tr>
    <tr>
    <td><input type="submit" value="Login"/></td>
    </tr>
    </table> 
+    </form>
   </body>
 </html>
