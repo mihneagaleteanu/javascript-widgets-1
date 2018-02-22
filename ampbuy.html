@@ -81,6 +81,7 @@
         .show()
         .then(function(instrumentResponse) {
           console.log('success');
+          console.log(instrumentResponse);
           instrumentResponse.complete('success').then(function() {
             top.window.location.href = 'https://ampbyexample.com';
           });
