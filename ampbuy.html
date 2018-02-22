@@ -30,17 +30,14 @@
   }
   buyButton.onclick = function(event) {
     var productIdToDetails = {
-      1: {
-        name: 'Apple',
-        price: 6.99
+      2000: {
+        miles: 70,
+        fees: 5.25
       },
-      2: {
-        name: 'Orange',
-        price: 4.50
-      },
-      3: {
-        name: 'Pear',
-        price: 3.99
+      2000: {
+        miles: 175,
+        fees: 13.13,
+        bonus: 1250
       }
     };
 
@@ -54,24 +51,39 @@
       supportedMethods: ['basic-card']
     }];
 
-    var cost = product['price'];
-
-    var details = {
-      total: {
-        label: 'Total', 
+    var cost = product['miles']+product['fees'];
+    
+    var total = {
+        label: 'TOTAL', 
         amount: {
           currency: 'USD', 
           value: cost.toFixed(2)
         }
-      },
-      displayItems: [
-        {
-          label: product['name'],
-          amount: {currency: 'USD', value: cost.toFixed(2)}
-        }
-      ]
-    };
+      };
+    var displayItems = [];
+    
+    displayItems.push({
+      label: 'Cost of '+productId+' miles',
+      amount: {currency: 'USD', value: product['miles'].toFixed(2)}
+    });
+    
+    if (product['bonus']) {
+      displayItems.push({
+        label: product['bonus']+' bonus miles',
+        amount: {currency: 'USD', value: 0.00}
+      });
+    }
+    
+    displayItems.push({
+      label: 'Tax recovery fee',
+      amount: {currency: 'USD', value: product['fees'].toFixed(2)}
+    });
 
+    var details = {
+      total: total,
+      displayItems: displayItems;
+    };
+    
     var options = {
       requestPayerName: true,
       requestShipping: false,
