@@ -37,7 +37,11 @@
     var product = productIdToDetails[productId];
 
     var supportedInstruments = [{
-      supportedMethods: ['basic-card']
+      supportedMethods: ['basic-card'],
+      data: {
+	supportedNetworks: ['visa', 'mastercard'],
+	supportedTypes: ['credit', 'debit']
+      }
     }];
 
     var cost = product['miles']+product['fees']+product['taxes'];
