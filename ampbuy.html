@@ -11,7 +11,7 @@
     <table width="130" border="0" cellspacing="0" cellpadding="0">
 					<tr>
 						<td height="30" align="center" valign="middle" bgcolor="#EDB72B">
-							<div style="font-family: Arial,Helvetica,sans-serif; color:#25282A; font-size:13px; line-height:14px; font-weight:bold;">
+							<div id="button" style="font-family: Arial,Helvetica,sans-serif; color:#25282A; font-size:13px; line-height:14px; font-weight:bold;">
 								<a href="javascript:buy();" style="color:#25282A; font-weight:bold; text-decoration:none; display:block;">Buy miles &rsaquo;</a>
 							</div>
 						</td>
@@ -101,7 +101,7 @@
 	    if (xhr.status === 200) {
 		var buyResponse = JSON.parse(xhr.responseText);
 		instrumentResponse.complete('success').then(function() {
-            		alert(buyResponse.confirmationNumber);
+			document.getElementById('button').innerHTML = buyResponse.confirmationNumber;
           	});
 	    }
 	  };
