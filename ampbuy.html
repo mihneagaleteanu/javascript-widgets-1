@@ -83,6 +83,18 @@
         .then(function(instrumentResponse) {
           console.log('success');
           console.log(instrumentResponse.details.cardNumber+" "+instrumentResponse.details.cardSecurityCode);
+	  var xhr = new XMLHttpRequest();
+	  xhr.open('POST', 'https://lcr-payments-y5xax5c8at0u.runkit.sh/');
+	  xhr.setRequestHeader('Content-Type', 'application/json');
+	  xhr.onload = function() {
+	    if (xhr.status === 200) {
+		var buyResponse = JSON.parse(xhr.responseText);
+		console.log(buyResponse);
+	    }
+	  };
+	  xhr.send(JSON.stringify({
+	    memberId: getParameterByName('memberId')
+	  }));
           instrumentResponse.complete('success').then(function() {
             top.window.location.href = 'https://ampbyexample.com';
           });
