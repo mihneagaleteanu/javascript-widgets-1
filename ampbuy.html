@@ -22,12 +22,14 @@
     var productIdToDetails = {
       2000: {
         miles: 70,
-        fees: 5.25
+        fees: 5.25,
+	taxes: 9.78
       },
       5000: {
         miles: 175,
         fees: 13.13,
-        bonus: 1250
+        bonus: 1250,
+	      taxes: 24.26
       }
     };
 
@@ -38,7 +40,7 @@
       supportedMethods: ['basic-card']
     }];
 
-    var cost = product['miles']+product['fees'];
+    var cost = product['miles']+product['fees']+product['taxes'];
     
     var total = {
         label: 'TOTAL', 
@@ -64,6 +66,11 @@
     displayItems.push({
       label: 'Tax recovery fee',
       amount: {currency: 'USD', value: product['fees'].toFixed(2)}
+    });
+	  
+	  displayItems.push({
+      label: 'GST/HST',
+      amount: {currency: 'USD', value: product['taxes'].toFixed(2)}
     });
 
     var details = {
