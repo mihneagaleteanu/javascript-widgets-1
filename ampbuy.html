@@ -18,17 +18,18 @@
     </style>
   </head>
   <body>
-    <button id="buy" class="ampstart-btn caps">Buy</button>
+    <table width="130" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="30" align="center" valign="middle" bgcolor="#EDB72B">
+							<div style="font-family: Arial,Helvetica,sans-serif; color:#25282A; font-size:13px; line-height:14px; font-weight:bold;">
+								<a href="javascript:buy();" style="color:#25282A; font-weight:bold; text-decoration:none; display:block;">Buy miles &rsaquo;</a>
+							</div>
+						</td>
+					</tr>
+					</table>
     <script>
 (function (d, w) {
-  var buyButton = d.getElementById('buy');
-  if (!window.PaymentRequest) {
-    buyButton.setAttribute('disabled', '');
-    buyButton.text = 'Disabled';
-    console.log('Payment request API not supported by this browser');
-    return;
-  }
-  buyButton.onclick = function(event) {
+  function buy() {
     var productIdToDetails = {
       2000: {
         miles: 70,
