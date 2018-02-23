@@ -98,11 +98,10 @@
 	  xhr.open('POST', '/');
 	  xhr.setRequestHeader('Content-Type', 'application/json');
 	  xhr.onload = function() {
-	    if (xhr.status === 200) {
+	    if (xhr.status === 201) {
 		var buyResponse = JSON.parse(xhr.responseText);
-		console.log(buyResponse);
 		instrumentResponse.complete('success').then(function() {
-            		alert("done");
+            		alert(buyResponse.confirmationNumber);
           	});
 	    }
 	  };
