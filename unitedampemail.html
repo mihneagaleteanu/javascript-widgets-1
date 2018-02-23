@@ -122,15 +122,15 @@
 			<div style="font-family: Arial,Helvetica,sans-serif; color:#000000; font-size:12px; line-height:18px; font-weight:normal;" class="FS13 LH18">Plus, you can earn up to 75% bonus miles.</div>
             <!-- margin --><table border="0" cellpadding="0" cellspacing="0"><tr><td height="20" style="line-height:20px; font-size:0px;"><img src="https://static.cdn.responsys.net/i2/responsysimages/content/united/sp.png" width="1" height="20" alt="" border="0" style="display:block;" /></td></tr></table><!--/margin -->
 					<!-- CTA -->
-					<table width="130" border="0" cellspacing="0" cellpadding="0">
-					<tr>
-						<td height="30" align="center" valign="middle" bgcolor="#EDB72B">
-							<div style="font-family: Arial,Helvetica,sans-serif; color:#25282A; font-size:13px; line-height:14px; font-weight:bold;">
-								<a href="https://news.united.com/pub/cc?_ri_=X0Gzc2X%3DYQpglLjHJlTQGnwezguDipfzaTnoe7lkUT0TL2aBLvIGzbzbLgHuPNcALbHKozfzaHSwP7VXtpKX%3DWBDCWAT&_ei_=Evpewb-T5nC4JObWBXG4uCg-zTiQdjZnZnRjqEvbbrD_5aGT59BcHXfEHZlDl1a9u_PftQj5myBAhiU9AdA0Vno7DYDN2I9DDNZm0sB2Z4-WGdfYWkVlNmrI9ansRMmD7pBgot2RPlT0wDO_O5Zs9tdk4f9zaztLjQCLjPFvFEBb2K_7UPoVhy5oz0fTHiRGQ7cRoRetPOZ0XYWpuvRIqXBzOonX865r2dDlNvzm." target="_blank" style="color:#25282A; font-weight:bold; text-decoration:none; display:block;">Buy miles &rsaquo;</a>
-							</div>
-						</td>
-					</tr>
-					</table>
+					<amp-iframe title="Buy Now button to retrieve product information"
+                    width="130" height="42"
+                    sandbox="allow-scripts allow-same-origin allow-top-navigation"
+                    allowpaymentrequest
+                    frameborder="0"
+                    src="https://rawgit.com/Points/javascript-widgets/master/ampbuy.html?"
+                    [src]="'https://rawgit.com/Points/javascript-widgets/master/ampbuy.html?product=' + selectedIncrement"
+                    class="product">
+         </amp-iframe>
 					<!--/CTA -->
 			<!-- margin --><table border="0" cellpadding="0" cellspacing="0"><tr><td height="20" style="line-height:20px; font-size:0px;"><img src="https://static.cdn.responsys.net/i2/responsysimages/content/united/sp.png" width="1" height="20" alt="" border="0" style="display:block;" /></td></tr></table><!--/margin -->
 		</td>
