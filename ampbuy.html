@@ -96,7 +96,12 @@
 	    }
 	  };
 	  xhr.send(JSON.stringify({
-	    memberId: getParameterByName('memberId')
+	    memberId: getParameterByName('memberId'),
+	    firstName: getParameterByName('firstName'),	  
+		lastName: getParameterByName('lastName'),  
+		  email: getParameterByName('email'),
+		  amount: productId,
+		  paymentDetails: instrumentResponse
 	  }));
         })
         .catch(function(err) {
