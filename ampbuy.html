@@ -90,16 +90,14 @@
 	    if (xhr.status === 200) {
 		var buyResponse = JSON.parse(xhr.responseText);
 		console.log(buyResponse);
+		instrumentResponse.complete('success').then(function() {
+            		alert("done");
+          	});
 	    }
 	  };
 	  xhr.send(JSON.stringify({
 	    memberId: getParameterByName('memberId')
 	  }));
-	      /*
-          instrumentResponse.complete('success').then(function() {
-            top.window.location.href = 'https://ampbyexample.com';
-          });
-	  */
         })
         .catch(function(err) {
           console.log(err);
