@@ -26,7 +26,7 @@
 	taxes: 9.78
       },
       5000: {
-        miles: 175,
+        miles: 137.50,
         fees: 13.13,
         bonus: 1250,
 	      taxes: 24.46
@@ -44,7 +44,8 @@
       }
     }];
 
-    var cost = product['miles']+product['fees']+product['taxes'];
+    //var cost = product['miles']+product['fees']+product['taxes'];
+	  var cost = product['miles'];
     
     var total = {
         label: 'TOTAL', 
@@ -56,17 +57,17 @@
     var displayItems = [];
     
     displayItems.push({
-      label: 'Cost of '+productId+' miles',
+      label: 'Cost of '+productId+' points',
       amount: {currency: 'USD', value: product['miles'].toFixed(2)}
     });
     
     if (product['bonus']) {
       displayItems.push({
-        label: product['bonus']+' bonus miles',
+        label: product['bonus']+' bonus points',
         amount: {currency: 'USD', value: 0.00}
       });
     }
-    
+    /*
     displayItems.push({
       label: 'Tax recovery fee',
       amount: {currency: 'USD', value: product['fees'].toFixed(2)}
@@ -76,7 +77,7 @@
       label: 'GST/HST',
       amount: {currency: 'USD', value: product['taxes'].toFixed(2)}
     });
-
+*/
     var details = {
       total: total,
       displayItems: displayItems
