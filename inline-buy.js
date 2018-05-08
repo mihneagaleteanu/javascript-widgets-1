@@ -859,13 +859,6 @@ PTS.inlineBuy = function() {
             //track that the user has clicked on the close button
             trackEvent('closeclicked');
 
-            // send jsonp call to check for transaction status
-            PTS.JsonpFetcher.get(
-                statusUrls.ebgt,
-                {external_transaction_id: localConfig.externalTxId},
-                successCallback
-            );
-
             PTS.JsonpFetcher.get(
                 statusUrls.bgt3,
                 {external_transaction_id: localConfig.externalTxId},
