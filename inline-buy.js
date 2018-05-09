@@ -928,7 +928,7 @@ PTS.inlineBuy = function() {
 
                 //inject html + css
                 if (closeButton) {
-                    closeButton.innerHTML = '<span aria-hidden="true" class="pts-close-x">Ã—</span> <span class="pts-close-text">Close</span>';
+                    closeButton.innerHTML = '<span aria-hidden="true" class="pts-close-x">×</span> <span class="pts-close-text">Close</span>';
                     closeButton.style.position = 'absolute';
                     closeButton.style.top = '0';
                     closeButton.style.cursor = 'pointer';
