@@ -779,7 +779,8 @@ PTS.inlineBuy = function() {
           iframeUrl += (iframeUrl.indexOf('?') === -1) ? '?' : '&';
           iframeUrl += _.param({
               token: localConfig.mvDelegate,
-              selectedQuantity: localConfig.transactionQuantity
+              transactionQuantity: localConfig.transactionQuantity,
+	      externalTxId: localConfig.externalTxId	  
           });
         } else {
           // Template out the SSO gateway url
@@ -813,8 +814,7 @@ PTS.inlineBuy = function() {
             var currTxStatus = '',
                 closeButton,
                 newHide = function() {
-                    //if (currTxStatus === 'COMPLETED') {
-					if (true) {
+                    if (currTxStatus === 'COMPLETED') {
                         //GA should go here, but the page redirect is gonna kill any attempts to do this.
                         if (localConfig.successUrl !== '') {
                             top.location = localConfig.successUrl;
