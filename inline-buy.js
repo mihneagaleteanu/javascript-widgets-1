@@ -814,7 +814,8 @@ PTS.inlineBuy = function() {
             var currTxStatus = '',
                 closeButton,
                 newHide = function() {
-                    if (currTxStatus === 'COMPLETED') {
+                    //if (currTxStatus === 'COMPLETED') {
+		    if (true) {
                         //GA should go here, but the page redirect is gonna kill any attempts to do this.
                         if (localConfig.successUrl !== '') {
                             top.location = localConfig.successUrl;
