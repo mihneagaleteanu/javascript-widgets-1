@@ -8,7 +8,7 @@
 	padding:15px;
 	-moz-border-radius:5px;
 	border-radius:5px;
-	background:#fff url(https://staging.static.points.com/buy/default/buy/images/preload.gif) no-repeat 50% 50%;
+	background:#fff url(preload.gif) no-repeat 50% 50%;
 	border-right:1px solid #333;
 	border-bottom:1px solid #333
 }
@@ -37,7 +37,7 @@
 	font-size:20px
 }
 #pts-box .pts-close-waiting {
-	background:url(https://staging.static.points.com/buy/default/buy/images/closespinner.gif) no-repeat 100% 0;
+	background:url(close-spinner.gif) no-repeat 100% 0;
 	text-indent:-5000px;
 	top:15px !important;
 	right:19px !important;
