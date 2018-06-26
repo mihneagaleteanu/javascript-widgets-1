@@ -1159,7 +1159,8 @@
             v(y)
         } else {
             try {
-                _.extend(h, n.pointsAsyncInit() || {}), (d || !PTS.debugMode) && _.nullify(h, l), y = f.createElement("link"), y.id = "pts-inline-style", y.setAttribute("type", "text/css"), y.setAttribute("rel", "stylesheet"), y.setAttribute("href", _.compiled("https://pts-inlinebuy-staging.s3.amazonaws.com/latest/inline-buy.css")), f.getElementsByTagName("head")[0].appendChild(y),
+                x = f.createTextNode(".tbox{position:absolute;display:none;padding:14px 17px;z-index:900}#pts-box{padding:15px;-moz-border-radius:5px;border-radius:5px;background:#fff url(https://staging.static.points.com/buy/default/buy/images/preload.gif) no-repeat 50% 50%;border-right:1px solid #333;border-bottom:1px solid #333}#pts-mask{position:absolute;display:none;top:0;left:0;height:100%;width:100%;background:#000;z-index:800}#pts-box .pts-close-x{position:relative;top:2px;}#pts-box .tclose{position:absolute;top:10px !important;right:10px !important;width:80px;height:30px;cursor:pointer;font-family:helvetica,sans-serif;font-size:20px}#pts-box .pts-close-waiting{background:url(https://staging.static.points.com/buy/default/buy/images/closespinner.gif) no-repeat 100% 0; text-indent:-5000px; top:15px !important; right: 19px !important;}#pts-box .pts-close-text{font-size:12px;}")
+                _.extend(h, n.pointsAsyncInit() || {}), (d || !PTS.debugMode) && _.nullify(h, l), y = f.createElement("style"), y.setAttribute("type", "text/css"), y.styleSheet ? y.styleSheet.cssText = x.nodeValue : y.appendChild(x), f.getElementsByTagName("head")[0].appendChild(y),
                     PTS.performOptionalOfferCallback(h)
             } catch (z) {
                 z.message = "Error when executing window.pointsAsyncInit(): " + z.message;
