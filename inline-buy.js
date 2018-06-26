@@ -1093,7 +1093,7 @@
                                 b = b.status;
                                 if ("COMPLETED" === b || "NOT_COMPLETED" === b && "" === c) c = b
                             });
-                            confirm(m.closeConfirm) && ("" !== c ? d() : (b = _.getChildByClassName(#"+m.partnerTransactionId+", "tclose"), b.className += " pts-close-waiting", n.setTimeout(function() {
+                            confirm(m.closeConfirm) && ("" !== c ? d() : (b = _.getChildByClassName(m.partnerTransactionId, "tclose"), b.className += " pts-close-waiting", n.setTimeout(function() {
                                 "" !== c ? d() : (v("transaction status jsonp call never returned"), e())
                             }, 2E3)))
                         }
