@@ -818,7 +818,7 @@
             }
         })
     })();
-    DIALOGID = "pts-box";//[+new Date, _.randomInt(1E4, 1E5)].join("");
+    DIALOGID = ["pts-box",+new Date, _.randomInt(1E4, 1E5)].join("");
     PTS = n.PTS || {};
     PTS.namespace = function(f) {
         f = f.split(".");
