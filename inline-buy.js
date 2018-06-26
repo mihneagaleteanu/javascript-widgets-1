@@ -1093,14 +1093,14 @@
                                 b = b.status;
                                 if ("COMPLETED" === b || "NOT_COMPLETED" === b && "" === c) c = b
                             });
-                            confirm(m.closeConfirm) && ("" !== c ? d() : (b = _.getChildByClassName("pts-box", "tclose"), b.className += " pts-close-waiting", n.setTimeout(function() {
+                            confirm(m.closeConfirm) && ("" !== c ? d() : (b = _.getChildByClassName(#"+m.partnerTransactionId+", "tclose"), b.className += " pts-close-waiting", n.setTimeout(function() {
                                 "" !== c ? d() : (v("transaction status jsonp call never returned"), e())
                             }, 2E3)))
                         }
                 };
                 TINY.box.show({
                     iframe: u,
-                    boxid: "pts-box",
+                    boxid: m.partnerTransactionId,
                     maskid: "pts-mask",
                     width: m.boxWidth ||
                         750,
@@ -1108,25 +1108,25 @@
                     fixed: !1,
                     maskopacity: 40,
                     openjs: function() {
-                        var b = f.getElementById("pts-box"),
+                        var b = f.getElementById(m.partnerTransactionId),
                             c = f.createElement("span"),
                             d = f.createElement("span"),
                             e = b.getElementsByTagName("iframe")[0];
                         e.setAttribute("id", "pts-iframe");
                         e.setAttribute("title", "Buy Points");
-                        c.id = "pts-box-label";
+                        c.id = m.partnerTransactionId+"-label";
                         c.setAttribute("style", "display:none");
                         c.innerText = "Buy Points Popup Dialog Box";
-                        d.id = "pts-box-description";
+                        d.id = m.partnerTransactionId+"-description";
                         d.setAttribute("style", "display:none");
                         d.innerText =
                             "In this modal window you can top up your account to complete the booking with points.";
                         b.setAttribute("role", "dialog");
-                        b.setAttribute("aria-labelledby", "pts-box-label");
-                        b.setAttribute("aria-describedby", "pts-box-description");
+                        b.setAttribute("aria-labelledby", m.partnerTransactionId+"-label");
+                        b.setAttribute("aria-describedby", m.partnerTransactionId+"-description");
                         b.appendChild(c);
                         b.appendChild(d);
-                        if (b = _.getChildByClassName("pts-box", "tclose")) b.innerHTML = '<span aria-hidden="true" class="pts-close-x">\u00d7</span> <span class="pts-close-text">Close</span>', b.setAttribute("tabindex", 0), b.setAttribute("role", "button"), b.focus(), PTS._closeButtonKeyDownHandler =
+                        if (b = _.getChildByClassName(m.partnerTransactionId, "tclose")) b.innerHTML = '<span aria-hidden="true" class="pts-close-x">\u00d7</span> <span class="pts-close-text">Close</span>', b.setAttribute("tabindex", 0), b.setAttribute("role", "button"), b.focus(), PTS._closeButtonKeyDownHandler =
                             PTS._closeButtonKeyDownHandler || function(b) {
                                 13 === (b.which || b.keyCode) && TINY.box.hide(b)
                             }, b.addEventListener("keydown", PTS._closeButtonKeyDownHandler, !1);
@@ -1134,7 +1134,7 @@
                         TINY.box.isOpen = !0
                     },
                     closejs: function() {
-                        var b = _.getChildByClassName("pts-box", "tclose");
+                        var b = _.getChildByClassName(m.partnerTransactionId, "tclose");
                         b.className = b.className.replace(" pts-close-waiting", "");
                         TINY.box.isOpen = !1
                     }
@@ -1159,7 +1159,7 @@
             v(y)
         } else {
             try {               
-                _.extend(h, n.pointsAsyncInit() || {}), (d || !PTS.debugMode) && _.nullify(h, l), y = f.createElement("style"), y.setAttribute("type", "text/css"), y.appendChild(f.createTextNode(".tbox{position:absolute;display:none;padding:14px 17px;z-index:900}#pts-box{padding:15px;-moz-border-radius:5px;border-radius:5px;background:#fff url(https://staging.static.points.com/buy/default/buy/images/preload.gif) no-repeat 50% 50%;border-right:1px solid #333;border-bottom:1px solid #333}#pts-mask{position:absolute;display:none;top:0;left:0;height:100%;width:100%;background:#000;z-index:800}#pts-box .pts-close-x{position:relative;top:2px;}#pts-box .tclose{position:absolute;top:10px !important;right:10px !important;width:80px;height:30px;cursor:pointer;font-family:helvetica,sans-serif;font-size:20px}#pts-box .pts-close-waiting{background:url(https://staging.static.points.com/buy/default/buy/images/closespinner.gif) no-repeat 100% 0; text-indent:-5000px; top:15px !important; right: 19px !important;}#pts-box .pts-close-text{font-size:12px;}")), f.getElementsByTagName("head")[0].appendChild(y),
+                _.extend(h, n.pointsAsyncInit() || {}), (d || !PTS.debugMode) && _.nullify(h, l), y = f.createElement("style"), y.setAttribute("type", "text/css"), y.appendChild(f.createTextNode(".tbox{position:absolute;display:none;padding:14px 17px;z-index:900}#"+m.partnerTransactionId+"{padding:15px;-moz-border-radius:5px;border-radius:5px;background:#fff url(https://staging.static.points.com/buy/default/buy/images/preload.gif) no-repeat 50% 50%;border-right:1px solid #333;border-bottom:1px solid #333}#pts-mask{position:absolute;display:none;top:0;left:0;height:100%;width:100%;background:#000;z-index:800}#"+m.partnerTransactionId+" .pts-close-x{position:relative;top:2px;}#"+m.partnerTransactionId+" .tclose{position:absolute;top:10px !important;right:10px !important;width:80px;height:30px;cursor:pointer;font-family:helvetica,sans-serif;font-size:20px}#"+m.partnerTransactionId+" .pts-close-waiting{background:url(https://staging.static.points.com/buy/default/buy/images/closespinner.gif) no-repeat 100% 0; text-indent:-5000px; top:15px !important; right: 19px !important;}#"+m.partnerTransactionId+" .pts-close-text{font-size:12px;}")), f.getElementsByTagName("head")[0].appendChild(y),
                     PTS.performOptionalOfferCallback(h)
             } catch (z) {
                 z.message = "Error when executing window.pointsAsyncInit(): " + z.message;
