@@ -1179,8 +1179,9 @@
                 }
             }
         }
-    }()
-    
+    }()      
+})(window);
+
     function checkInt(value) {
         return (parseInt(value) === value);
     }
@@ -1972,5 +1973,3 @@
 
         window.aesjs = aesjs;
     }
-    
-})(window);
