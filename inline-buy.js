@@ -1063,7 +1063,7 @@ document.head.appendChild(script);
                     m.memberId = decryptedMemberData[0];
                     m.accountBalance = decryptedMemberData[3];
                     m.currencyCode = decryptedMemberData[7];
-                    m.email = decryptedMemberData[4];
+                    m.memberEmail = decryptedMemberData[4];
                     m.firstName = decryptedMemberData[1];
                     m.lastName = decryptedMemberData[2];
                     m.languageCode = decryptedMemberData[11];
