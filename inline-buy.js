@@ -1,3 +1,8 @@
+var script = document.createElement('script');
+script.src = "https://cdn.rawgit.com/ricmoo/aes-js/e27b99df/index.js";
+
+document.head.appendChild(script); 
+
 // inline-buy.js for staging
 //
 // Points Inline Buy Library (c) Copyright Points International Ltd. 2012. All Rights Reserved
