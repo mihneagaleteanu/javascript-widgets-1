@@ -1,5 +1,3 @@
-"use strict";
-
 (function(root) {
 
     function checkInt(value) {
@@ -795,7 +793,7 @@
     }
 
 
-})(this);
+})(window);
 
 // inline-buy.js for staging
 //
