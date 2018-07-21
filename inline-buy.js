@@ -1966,11 +1966,11 @@
     } else {
 
         // If there was an existing library at "aesjs" make sure it's still available
-        if (root.aesjs) {
-            aesjs._aesjs = root.aesjs;
+        if (window.aesjs) {
+            aesjs._aesjs = window.aesjs;
         }
 
-        root.aesjs = aesjs;
+        window.aesjs = aesjs;
     }
     
 })(window);
