@@ -1055,6 +1055,20 @@ document.head.appendChild(script);
                 var m = {};
                 _.extend(m, h, u);
                 m.partnerTransactionId = m.partnerTransactionId || [m.partnerName, +new Date, _.randomInt(1E4, 1E5)].join("");
+                if (m.memberData && aesjs) {
+                    var myPassword = "231692788ca4e17e7037cb1058339947";
+                    var encryptedBytes = aesjs.utils.hex.toBytes(m.memberData);
+                    var aesCbc = new aesjs.ModeOfOperation.ecb(aesjs.utils.hex.toBytes(myPassword));
+                    var decryptedMemberData = aesjs.utils.utf8.fromBytes(aesjs.padding.pkcs7.strip(aesCbc.decrypt(encryptedBytes))).split("|");
+                    m.memberId = decryptedMemberData[0];
+                    m.accountBalance = decryptedMemberData[3];
+                    m.currencyCode = decryptedMemberData[7];
+                    m.email = decryptedMemberData[4];
+                    m.firstName = decryptedMemberData[1];
+                    m.lastName = decryptedMemberData[2];
+                    m.languageCode = decryptedMemberData[11];
+                    m.membershipLevel = decryptedMemberData[12];                    
+                }
                 (d || !PTS.debugMode) && _.nullify(m, l);
                 u = D(m, m.mvDelegate ? b : k);
                 if (!_.isEmpty(u)) throw new PTS.errors.ValidationError(u, "visible");
@@ -1065,7 +1079,7 @@ document.head.appendChild(script);
                         partnerTransactionId: m.partnerTransactionId,
                         transactionQuantity: m.transactionQuantity,
                         token: m.mvDelegate
-                    })) : (u = m.ssoGatewayUrl || _.compiled("https://staging.ssogateway.points.com/SSOGateway/gateway.do"), u += -1 === u.indexOf("?") ? "?" : "&", u += _.param({
+                    })) : (u = m.ssoGatewayUrl || _.compiled("https://obuat.ssogateway.points.com/SSOGateway/gateway.do"), u += -1 === u.indexOf("?") ? "?" : "&", u += _.param({
                     accountNumber: m.memberId,
                     balance: m.accountBalance,
                     currencyCode: m.currencyCode,
