@@ -971,8 +971,8 @@ document.head.appendChild(script);
     PTS.isEligibleForOffer = function(f) {
         var e = {
                 Economy: 0.8,
-                Business: 0.8,
-                "First Class": 0.8
+                Business: 0.5,
+                "First Class": 0.5
             },
             h = _.get(f, "flightBookingDetails.cabin");
         return !_.contains(_.keys(e), h) ? !0 : (f.redemptionQuantity - f.transactionQuantity) / f.redemptionQuantity >= e[h]
