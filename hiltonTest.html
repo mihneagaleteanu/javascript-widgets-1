@@ -2,7 +2,9 @@
 <head>
 <script>
 function loadTop() {
-window.open("https://www.cnn.com","_blank");
+  if (confirm("can we pop out?") {
+      window.top.location = "https://www.cnn.com";
+  }
 }
 </script>
 <body onload="loadTop();">
