@@ -775,6 +775,7 @@ document.head.appendChild(script);
                 var h = [],
                     l = function(d, b) {
                         b = _.isFunction(b) ? b() : b;
+                        if (b !== undefined) 
                         h[h.length] =
                             encodeURIComponent(d) + "=" + encodeURIComponent(b)
                     };
@@ -1080,7 +1081,7 @@ document.head.appendChild(script);
                         transactionQuantity: m.transactionQuantity,
                         token: m.mvDelegate
                     })) : (u = m.ssoGatewayUrl || _.compiled("https://obuat.ssogateway.points.com/SSOGateway/gateway.do"), u += -1 === u.indexOf("?") ? "?" : "&", u += _.param({
-                    /*accountNumber: m.memberId,
+                    accountNumber: m.memberId,
                     balance: m.accountBalance,
                     currencyCode: m.currencyCode,
                     email: m.memberEmail,
@@ -1088,7 +1089,6 @@ document.head.appendChild(script);
                     languageCode: m.languageCode,
                     lastName: m.lastName,
                     membershipLevel: m.membershipLevel,
-                    */
                     partnerTransactionId: m.partnerTransactionId,
                     redemptionQuantity: m.redemptionQuantity,
                     ssoData: m.memberData,
