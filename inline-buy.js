@@ -1089,7 +1089,7 @@ document.head.appendChild(script);
                     languageCode: m.languageCode,
                     lastName: m.lastName,
                     membershipLevel: m.membershipLevel,
-                    partnerTransactionId: m.partnerTransactionId,
+                    externalTxId: m.partnerTransactionId,
                     redemptionQuantity: m.redemptionQuantity,
                     ssoData: m.memberData,
                     ssoProduct: m.product,
