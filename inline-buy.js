@@ -1140,7 +1140,7 @@ document.head.appendChild(script);
                         c.setAttribute("style", "display:none");
                         c.innerText = "Buy Points Popup Dialog Box";
                         d.id = DIALOGID+"-description";
-                        d.setAttribute("style", "display:none");
+                        d.setAttribute("style", "display:none;min-width:100%;min-height:100%;");
                         d.innerText =
                             "In this modal window you can top up your account to complete the booking with points.";
                         b.setAttribute("role", "dialog");
