@@ -643,7 +643,7 @@ document.head.appendChild(script);
                     html: 0,
                     iframe: 0
                 };
-                for (s in b) d[s] = b[s];
+                for (var s in b) d[s] = b[s];
                 k ? (f.style.display = "none", clearTimeout(k.ah), l.v && (k.removeChild(l), l.v = 0)) : (f = document.createElement("div"), f.className = "tbox", k = document.createElement("div"), k.className = "tinner", h = document.createElement("div"), h.className = "tcontent", e = document.createElement("div"), e.className = "tmask",
                     l = document.createElement("div"), l.className = "tclose", l.v = 0, document.body.appendChild(e), document.body.appendChild(f), f.appendChild(k), k.appendChild(h), e.onclick = l.onclick = TINY.box.hide, n.onresize = TINY.box.resize);
                 k.id = d.boxid;
