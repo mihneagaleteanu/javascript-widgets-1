@@ -1136,6 +1136,7 @@ document.head.appendChild(script);
                             e = b.getElementsByTagName("iframe")[0];
                         e.setAttribute("id", "pts-iframe");
                         e.setAttribute("title", "Buy Points");
+                        e.setAttribute("style", "padding:5px");             
                         c.id = DIALOGID+"-label";
                         c.setAttribute("style", "display:none");
                         c.innerText = "Buy Points Popup Dialog Box";
