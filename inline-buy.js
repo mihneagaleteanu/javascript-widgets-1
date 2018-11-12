@@ -969,15 +969,29 @@ document.head.appendChild(script);
         }
     })(n, document, _);
     PTS.namespace("PTS.isEligibleForOffer");
-    PTS.isEligibleForOffer = function(f) {
-        var e = {
-                Economy: 0.8,
-                Business: 0.5,
-                "First Class": 0.5
-            },
-            h = _.get(f, "flightBookingDetails.cabin");
-        return !_.contains(_.keys(e), h) ? !0 : (f.redemptionQuantity - f.transactionQuantity) / f.redemptionQuantity >= e[h]
-    };
+    PTS.isEligibleForOffer = function(config) {
+  var cabinThresholds = {
+    Economy: 0.8,
+    Business: 0.5,
+    "First Class": 0.5
+  };
+  var cabin = _.get(config, "flightBookingDetails.cabin");
+  if (!_.contains(_.keys(cabinThresholds), cabin)) {
+    return true;
+  }
+  
+  //https://jira.points.com/browse/DBGTLCP-10309
+  var threshold = cabinThresholds[cabin];
+  var origin = _.get(config, "flightBookingDetails.originCode");
+  var destination = _.get(config, "flightBookingDetails.destinationCode");
+  var uaeAirports = ["DXB","ZVJ"];
+  if (cabin === "Economy" && (uaeAirports.includes(origin) || uaeAirports.includes(destination))) {
+      threshold = 0.5;
+  }
+  
+  var percentNeededToRedeem = (config.redemptionQuantity - config.transactionQuantity) / config.redemptionQuantity;
+  return percentNeededToRedeem >= threshold;
+};
     PTS.namespace("PTS.performOptionalOfferCallback");
     PTS.performOptionalOfferCallback = function(f) {
         if (_.isFunction(f.offerCallback)) {
