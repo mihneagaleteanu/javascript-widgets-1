@@ -985,7 +985,7 @@ document.head.appendChild(script);
   var origin = _.get(config, "flightBookingDetails.originCode");
   var destination = _.get(config, "flightBookingDetails.destinationCode");
   var uaeAirports = ["DXB","ZVJ"];
-  if (cabin === "Economy" && (uaeAirports.includes(origin) || uaeAirports.includes(destination))) {
+  if (cabin === "Economy" && (uaeAirports.indexOf(origin) > -1 || uaeAirports.indexOf(destination) > -1)) {
       threshold = 0.5;
   }
   
