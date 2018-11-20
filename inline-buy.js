@@ -1112,7 +1112,7 @@ document.head.appendChild(script);
                     transactionQuantity: m.transactionQuantity
                 }));
                 TINY.box.esc = function() {};
-                var partnerTransactionId = m.partnerTransactionId;
+                partnerTransactionId = m.partnerTransactionId;
                 TINY.box.hide = function(b) {
                     if (F(b))
                         if (_.isFunction(m.closeDialogCallback)) confirm(m.closeConfirm) && (setTimeout(function() {
