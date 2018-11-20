@@ -1112,10 +1112,11 @@ document.head.appendChild(script);
                     transactionQuantity: m.transactionQuantity
                 }));
                 TINY.box.esc = function() {};
+                var partnerTransactionId = m.partnerTransactionId;
                 TINY.box.hide = function(b) {
                     if (F(b))
                         if (_.isFunction(m.closeDialogCallback)) confirm(m.closeConfirm) && (setTimeout(function() {
-                            m.closeDialogCallback(m.partnerTransactionId)
+                            m.closeDialogCallback(partnerTransactionId)
                         }), e());
                         else {
                             var c = "",
@@ -1124,7 +1125,7 @@ document.head.appendChild(script);
                                     e()
                                 };
                             PTS.JsonpFetcher.get(_.compiled("https://storefront-staging.lxc.points.com/order-status"), {
-                                external_transaction_id: m.partnerTransactionId
+                                external_transaction_id: partnerTransactionId
                             }, function(b) {
                                 b = b.status;
                                 if ("COMPLETED" === b || "NOT_COMPLETED" === b && "" === c) c = b
