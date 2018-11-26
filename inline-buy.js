@@ -1006,6 +1006,7 @@ document.head.appendChild(script);
                     "/" + f.partnerName + "/apis/offer";
                 return PTS.JsonpFetcher.get(h, {
                     mvDelegate: f.mvDelegate,
+                    incrementMaxLength: 9999,
                     transactionQuantity: f.transactionQuantity
                 }, function(h) {
                     h = h.offer;
