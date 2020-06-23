@@ -3,7 +3,7 @@ var ROUTING_CONFIG = {
   "bootstrapSelector": "body",
   "routes": [
     {
-      "configurationUrl": "https://dz57b37czzuk6.cloudfront.net/storefronts/radisson-hotels/topup/master/configuration.json",
+      "configurationUrl": "https://dz57b37czzuk6.cloudfront.net/storefronts/radisson-hotels/topup/PSBGT-1999-radisson-topup/configuration.json",
       "sfnJsUrl": "https://d3e6canjev74qs.cloudfront.net/js/v4/sfn.js",
       "weight": 100
     }
